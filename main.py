@@ -21,8 +21,11 @@ kv = """
     padding: dp(8)
     spacing: dp(16)
     value: ''
-    Label:
-        text: root.value
+    TextInput:
+        id: beer_name
+        size_hint_x: 0.6
+        hint_text: 'Biername'
+        padding: dp(10), dp(10), 0, 0
     Label:
         text: root.value
     Label:
@@ -43,6 +46,95 @@ kv = """
             pos: self.pos
     rv: rv
     orientation: 'vertical'
+    
+    GridLayout:
+        canvas:
+            Color:
+                rgba: 0.941, 0.902, 0.56, 1
+            Rectangle: 
+                size: self.size
+                pos: self.pos
+        cols: 6
+        rows: 1
+        row_force_default: True
+        row_default_height: dp(70)
+        size_hint_y: 0.2
+        height: dp(70)
+        padding: dp(8)
+        spacing: dp(16)
+        GridLayout: 
+            cols: 1
+            rows: 3
+            size_hint_y: None
+            height: dp(80)
+            padding: dp(2)
+            spacing: dp(10)
+            Button: 
+                text: 'Biername'
+            Button: 
+                text: 'Braudatum'
+            Button:
+                text: 'Verantwortlich'
+        GridLayout:
+            cols: 1
+            rows: 2
+            size_hint_y: None
+            size_hint_x: 
+            height: dp(50)
+            padding: dp(2)
+            spacing: dp(10)
+            Button:
+                text: 'Fass-Nr.'
+            Label:
+                text: 'Menge [L]'
+        GridLayout:
+            cols: 1
+            rows: 2
+            size_hint_y: None
+            height: dp(50)
+            padding: dp(2)
+            spacing: dp(10)
+            Label:
+                text: 'Geschlaucht'
+            Label: 
+                text: 'Datum'
+        GridLayout:
+            cols: 1
+            rows: 2
+            size_hint_y: None
+            height: dp(50)
+            padding: dp(2)
+            spacing: dp(10)
+            Label:
+                text: 'Umgedrückt'
+            Label: 
+                text: 'Datum'
+        GridLayout:
+            cols: 1
+            rows: 2
+            size_hint_y: None
+            height: dp(50)
+            padding: dp(2)
+            spacing: dp(10)
+            Label:
+                text: 'Gespundet'
+            Label: 
+                text: 'Startdatum'
+        GridLayout:
+            cols: 1
+            rows: 3
+            size_hint_y: None
+            height: dp(80)
+            padding: dp(2)
+            spacing: dp(10)
+            Label:
+                text: 'Bemerkungen'
+            Label: 
+                text: '(A) Anmerkung'
+            Button: 
+                text: '(V) Verwendung'                
+                
+    
     RecycleView:
         id: rv
         scroll_type: ['bars', 'content']
@@ -57,21 +149,15 @@ kv = """
             orientation: 'vertical'
             spacing: dp(2)
     GridLayout:
-        cols: 6
-        rows: 2
+        cols: 2
+        rows: 1
         size_hint_y: None
         height: dp(108)
         padding: dp(8)
         spacing: dp(16)
         Button:
-            text: 'Populate list'
-            on_press: root.populate()
-        Button:
             text: 'Sort list'
             on_press: root.sort()
-        Button:
-            text: 'Clear list'
-            on_press: root.clear()
         BoxLayout:
             spacing: dp(8)
             Button:
@@ -82,19 +168,7 @@ kv = """
                 size_hint_x: 0.6
                 hint_text: 'value'
                 padding: dp(10), dp(10), 0, 0
-        BoxLayout:
-            spacing: dp(8)
-            Button:
-                text: 'Update first item'
-                on_press: root.update(update_item_input.text)
-            TextInput:
-                id: update_item_input
-                size_hint_x: 0.6
-                hint_text: 'new value'
-                padding: dp(10), dp(10), 0, 0
-        Button:
-            text: 'Remove first item'
-            on_press: root.remove()
+        
 
 """
 
