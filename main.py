@@ -84,6 +84,7 @@ kv = """
                 text: 'Fass-Nr.'
             Label:
                 text: 'Menge [L]'
+                color: (0.2, 0.031, 0, 1)
         GridLayout:
             cols: 1
             rows: 2
@@ -92,8 +93,10 @@ kv = """
             spacing: dp(5)
             Label:
                 text: 'Geschlaucht'
+                color: (0.2, 0.031, 0, 1)
             Label: 
                 text: 'Datum'
+                color: (0.2, 0.031, 0, 1)
         GridLayout:
             cols: 1
             rows: 2
@@ -102,8 +105,10 @@ kv = """
             spacing: dp(5)
             Label:
                 text: 'Umgedrückt'
+                color: (0.2, 0.031, 0, 1)
             Label: 
                 text: 'Datum'
+                color: (0.2, 0.031, 0, 1)
         GridLayout:
             cols: 1
             rows: 2
@@ -112,8 +117,10 @@ kv = """
             spacing: dp(5)
             Label:
                 text: 'Gespundet'
+                color: (0.2, 0.031, 0, 1)
             Label: 
                 text: 'Startdatum'
+                color: (0.2, 0.031, 0, 1)
         GridLayout:
             cols: 1
             rows: 3
@@ -122,8 +129,10 @@ kv = """
             spacing: dp(5)
             Label:
                 text: 'Bemerkungen'
+                color: (0.2, 0.031, 0, 1)
             Label: 
                 text: '(A) Anmerkung'
+                color: (0.2, 0.031, 0, 1)
             Button: 
                 text: '(V) Verwendung'                
                 
