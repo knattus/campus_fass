@@ -18,8 +18,8 @@ kv = """
     rows: 1
     size_hint_y: None
     height: dp(108)
-    padding: dp(8)
-    spacing: dp(16)
+    padding: dp(0)
+    spacing: dp(5)
     value: ''
     TextInput:
         id: beer_name
@@ -48,27 +48,26 @@ kv = """
     orientation: 'vertical'
     
     GridLayout:
-        canvas:
-            Color:
-                rgba: 0.941, 0.902, 0.56, 1
-            Rectangle: 
-                size: self.size
-                pos: self.pos
         cols: 6
         rows: 1
         row_force_default: True
-        row_default_height: dp(70)
-        size_hint_y: 0.2
-        height: dp(70)
-        padding: dp(8)
-        spacing: dp(16)
+        row_default_height: dp(90)
+        size_hint_y: None
+        height: dp(90)
+        padding: dp(0)
+        spacing: dp(0)
+        canvas:
+            Color:
+                rgba: 0.941, 0.902, 0.56, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
         GridLayout: 
             cols: 1
             rows: 3
-            size_hint_y: None
-            height: dp(80)
+            size_hint_y: self.parent.height
             padding: dp(2)
-            spacing: dp(10)
+            spacing: dp(5)
             Button: 
                 text: 'Biername'
             Button: 
@@ -78,11 +77,9 @@ kv = """
         GridLayout:
             cols: 1
             rows: 2
-            size_hint_y: None
-            size_hint_x: 
-            height: dp(50)
+            size_hint_y: self.parent.height
             padding: dp(2)
-            spacing: dp(10)
+            spacing: dp(5)
             Button:
                 text: 'Fass-Nr.'
             Label:
@@ -90,10 +87,9 @@ kv = """
         GridLayout:
             cols: 1
             rows: 2
-            size_hint_y: None
-            height: dp(50)
+            size_hint_y: self.parent.height
             padding: dp(2)
-            spacing: dp(10)
+            spacing: dp(5)
             Label:
                 text: 'Geschlaucht'
             Label: 
@@ -101,10 +97,9 @@ kv = """
         GridLayout:
             cols: 1
             rows: 2
-            size_hint_y: None
-            height: dp(50)
+            size_hint_y: self.parent.height
             padding: dp(2)
-            spacing: dp(10)
+            spacing: dp(5)
             Label:
                 text: 'Umgedrückt'
             Label: 
@@ -112,10 +107,9 @@ kv = """
         GridLayout:
             cols: 1
             rows: 2
-            size_hint_y: None
-            height: dp(50)
+            size_hint_y: self.parent.height
             padding: dp(2)
-            spacing: dp(10)
+            spacing: dp(5)
             Label:
                 text: 'Gespundet'
             Label: 
@@ -123,10 +117,9 @@ kv = """
         GridLayout:
             cols: 1
             rows: 3
-            size_hint_y: None
-            height: dp(80)
+            size_hint_y: self.parent.height
             padding: dp(2)
-            spacing: dp(10)
+            spacing: dp(5)
             Label:
                 text: 'Bemerkungen'
             Label: 
