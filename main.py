@@ -16,26 +16,86 @@ kv = """
             pos: self.pos
     cols: 6
     rows: 1
+    row_force_default: True
+    row_default_height: dp(90)
     size_hint_y: None
-    height: dp(108)
+    height: self.minimum_height
     padding: dp(0)
-    spacing: dp(5)
+    spacing: dp(0)
     value: ''
-    TextInput:
-        id: beer_name
-        size_hint_x: 0.6
-        hint_text: 'Biername'
-        padding: dp(10), dp(10), 0, 0
-    Label:
-        text: root.value
-    Label:
-        text: root.value
-    Label:
-        text: root.value
-    Label:
-        text: root.value
-    Label:
-        text: root.value
+    GridLayout:
+        cols: 1
+        rows: 3
+        size_hint_y: self.parent.height
+        padding: dp(2)
+        spacing: dp(5)
+        TextInput:
+            id: beer_name
+            size_hint_x: self.parent.width
+            hint_text: 'Biername'
+        Label: 
+            text: root.value
+        Label: 
+            text: root.value
+    GridLayout:
+        cols: 1
+        rows: 2
+        size_hint_y: self.parent.height
+        padding: dp(2)
+        spacing: dp(5)
+        Label:
+            text: root.value
+        Label:
+            text: root.value
+            color: (0.2, 0.031, 0, 1)
+    GridLayout:
+        cols: 1
+        rows: 2
+        size_hint_y: self.parent.height
+        padding: dp(2)
+        spacing: dp(5)
+        Label:
+            text: 'Geschlaucht'
+            color: (0.2, 0.031, 0, 1)
+        Label: 
+            text: 'Datum'
+            color: (0.2, 0.031, 0, 1)
+    GridLayout:
+        cols: 1
+        rows: 2
+        size_hint_y: self.parent.height
+        padding: dp(2)
+        spacing: dp(5)
+        Label:
+            text: 'Umgedrückt'
+            color: (0.2, 0.031, 0, 1)
+        Label: 
+            text: 'Datum'
+            color: (0.2, 0.031, 0, 1)
+    GridLayout:
+        cols: 1
+        rows: 2
+        size_hint_y: self.parent.height
+        padding: dp(2)
+        spacing: dp(5)
+        Label:
+            text: 'Gespundet'
+            color: (0.2, 0.031, 0, 1)
+        Label: 
+            text: 'Startdatum'
+            color: (0.2, 0.031, 0, 1)
+    GridLayout:
+        cols: 1
+        rows: 2
+        size_hint_y: self.parent.height
+        padding: dp(2)
+        spacing: dp(5)
+        Label: 
+            text: root.value
+            color: (0.2, 0.031, 0, 1)
+        Label: 
+            text: root.value
+            color: (0.2, 0.031, 0, 1)
 
 <Test>:
     canvas:
@@ -53,7 +113,7 @@ kv = """
         row_force_default: True
         row_default_height: dp(90)
         size_hint_y: None
-        height: dp(90)
+        height: self.minimum_height
         padding: dp(0)
         spacing: dp(0)
         canvas:
@@ -154,7 +214,7 @@ kv = """
         cols: 2
         rows: 1
         size_hint_y: None
-        height: dp(108)
+        height: dp(50)
         padding: dp(8)
         spacing: dp(16)
         Button:
@@ -167,8 +227,9 @@ kv = """
                 on_press: root.insert(new_item_input.text)
             TextInput:
                 id: new_item_input
-                size_hint_x: 0.6
+                size_hint_x: None
                 hint_text: 'value'
+                height: self.minimum_height
                 padding: dp(10), dp(10), 0, 0
         
 
@@ -190,7 +251,7 @@ class Test(BoxLayout):
         self.rv.data = []
 
     def insert(self, value):
-        self.rv.data.insert(0, {'value': value or 'default value'})
+        self.rv.data.insert(100, {'value': value or 'default value'})
 
     def update(self, value):
         if self.rv.data:
