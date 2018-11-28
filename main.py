@@ -54,42 +54,6 @@ kv = """
         size_hint_y: self.parent.height
         padding: dp(2)
         spacing: dp(5)
-        Label:
-            text: 'Geschlaucht'
-            color: (0.2, 0.031, 0, 1)
-        Label: 
-            text: 'Datum'
-            color: (0.2, 0.031, 0, 1)
-    GridLayout:
-        cols: 1
-        rows: 2
-        size_hint_y: self.parent.height
-        padding: dp(2)
-        spacing: dp(5)
-        Label:
-            text: 'Umgedrückt'
-            color: (0.2, 0.031, 0, 1)
-        Label: 
-            text: 'Datum'
-            color: (0.2, 0.031, 0, 1)
-    GridLayout:
-        cols: 1
-        rows: 2
-        size_hint_y: self.parent.height
-        padding: dp(2)
-        spacing: dp(5)
-        Label:
-            text: 'Gespundet'
-            color: (0.2, 0.031, 0, 1)
-        Label: 
-            text: 'Startdatum'
-            color: (0.2, 0.031, 0, 1)
-    GridLayout:
-        cols: 1
-        rows: 2
-        size_hint_y: self.parent.height
-        padding: dp(2)
-        spacing: dp(5)
         Label: 
             text: root.value
             color: (0.2, 0.031, 0, 1)
@@ -144,42 +108,6 @@ kv = """
                 text: 'Fass-Nr.'
             Label:
                 text: 'Menge [L]'
-                color: (0.2, 0.031, 0, 1)
-        GridLayout:
-            cols: 1
-            rows: 2
-            size_hint_y: self.parent.height
-            padding: dp(2)
-            spacing: dp(5)
-            Label:
-                text: 'Geschlaucht'
-                color: (0.2, 0.031, 0, 1)
-            Label: 
-                text: 'Datum'
-                color: (0.2, 0.031, 0, 1)
-        GridLayout:
-            cols: 1
-            rows: 2
-            size_hint_y: self.parent.height
-            padding: dp(2)
-            spacing: dp(5)
-            Label:
-                text: 'Umgedrückt'
-                color: (0.2, 0.031, 0, 1)
-            Label: 
-                text: 'Datum'
-                color: (0.2, 0.031, 0, 1)
-        GridLayout:
-            cols: 1
-            rows: 2
-            size_hint_y: self.parent.height
-            padding: dp(2)
-            spacing: dp(5)
-            Label:
-                text: 'Gespundet'
-                color: (0.2, 0.031, 0, 1)
-            Label: 
-                text: 'Startdatum'
                 color: (0.2, 0.031, 0, 1)
         GridLayout:
             cols: 1
