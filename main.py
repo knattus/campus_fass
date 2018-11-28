@@ -10,7 +10,7 @@ kv = """
 <Row@GridLayout>:
     canvas:
         Color:
-            rgba: 0.941, 0.902, 0.56, 1
+            rgba: 0.996, 0.941, 0.757, 1
         Rectangle:
             size: self.size
             pos: self.pos
@@ -47,7 +47,7 @@ kv = """
             text: root.value
         Label:
             text: root.value
-            color: (0.2, 0.031, 0, 1)
+            color: (0.345, 0.169, 0.145, 1)
     GridLayout:
         cols: 1
         rows: 2
@@ -56,15 +56,15 @@ kv = """
         spacing: dp(5)
         Label: 
             text: root.value
-            color: (0.2, 0.031, 0, 1)
+            color: (0.345, 0.169, 0.145, 1)
         Label: 
             text: root.value
-            color: (0.2, 0.031, 0, 1)
+            color: (0.345, 0.169, 0.145, 1)
 
 <Test>:
     canvas:
         Color:
-            rgba: 0.3, 0, 0, 1
+            rgba: 0.345, 0.169, 0.145, 1
         Rectangle:
             size: self.size
             pos: self.pos
@@ -82,7 +82,7 @@ kv = """
         spacing: dp(0)
         canvas:
             Color:
-                rgba: 0.941, 0.902, 0.56, 1
+                rgba: 0.996, 0.941, 0.757, 1
             Rectangle:
                 size: self.size
                 pos: self.pos
@@ -108,7 +108,7 @@ kv = """
                 text: 'Fass-Nr.'
             Label:
                 text: 'Menge [L]'
-                color: (0.2, 0.031, 0, 1)
+                color: (0.345, 0.169, 0.145, 1)
         GridLayout:
             cols: 1
             rows: 3
@@ -117,10 +117,10 @@ kv = """
             spacing: dp(5)
             Label:
                 text: 'Bemerkungen'
-                color: (0.2, 0.031, 0, 1)
+                color: (0.345, 0.169, 0.145, 1)
             Label: 
                 text: '(A) Anmerkung'
-                color: (0.2, 0.031, 0, 1)
+                color: (0.345, 0.169, 0.145, 1)
             Button: 
                 text: '(V) Verwendung'                
                 
@@ -149,7 +149,7 @@ kv = """
         spacing: dp(0)
         canvas:
             Color:
-                rgba: 0.941, 0.902, 0.56, 1
+                rgba: 0.996, 0.941, 0.757, 1
             Rectangle:
                 size: self.size
                 pos: self.pos
@@ -191,7 +191,7 @@ kv = """
             size_hint_y: self.parent.height
             Label:
                 text: 'Bemerkungen'
-                color: (0.2, 0.031, 0, 1)
+                color: (0.345, 0.169, 0.145, 1)
             TextInput:
                 id: note
                 size_hint_x: self.parent.width
@@ -199,7 +199,7 @@ kv = """
             TextInput:
                 id: intendet_use
                 size_hint_x: self.parent.width
-                hint_text: 'Verwendung'        
+                hint_text: 'Verwendung, Datum'        
             
         GridLayout:
             cols: 1
@@ -207,7 +207,7 @@ kv = """
             size_hint_y: self.parent.height  
             Button:
                 text: 'Insert new item'
-                on_press: root.insert(new_item_input.text)
+                on_press: root.insert(intendet_use.text)
             Button: 
                 text: 'Clear'
                 
@@ -230,7 +230,7 @@ class Test(BoxLayout):
         self.rv.data = []
 
     def insert(self, value):
-        self.rv.data.insert(100, {'value': value or 'default value'})
+        self.rv.data.insert(100, {'intendet_use': value or 'default value'})
 
     def update(self, value):
         if self.rv.data:
