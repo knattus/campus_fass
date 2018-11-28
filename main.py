@@ -139,28 +139,79 @@ kv = """
             orientation: 'vertical'
             spacing: dp(2)
     GridLayout:
-        cols: 2
+        cols: 4
         rows: 1
+        row_force_default: True
+        row_default_height: dp(90)
         size_hint_y: None
-        height: dp(50)
-        padding: dp(8)
-        spacing: dp(16)
-        Button:
-            text: 'Sort list'
-            on_press: root.sort()
-        BoxLayout:
-            spacing: dp(8)
+        height: self.minimum_height
+        padding: dp(0)
+        spacing: dp(0)
+        canvas:
+            Color:
+                rgba: 0.941, 0.902, 0.56, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            cols: 1
+            rows: 3
+            size_hint_y: self.parent.height
+            TextInput:
+                id: beer_name
+                size_hint_x: self.parent.width
+                hint_text: 'Biername'
+            TextInput:
+                id: brewing_date
+                size_hint_x: self.parent.width
+                hint_text: 'Braudatum'
+            TextInput:
+                id: responsible_name
+                size_hint_x: self.parent.width
+                hint_text: 'Brauverantwortlicher'
+        GridLayout:
+            cols: 1
+            rows: 3
+            size_hint_y: self.parent.height
+            TextInput:
+                id: keg_number
+                size_hint_x: self.parent.width
+                hint_text: 'Fass-Nr.'
+            TextInput:
+                id: content_liter
+                size_hint_x: self.parent.width
+                hint_text: 'Menge'
+            TextInput:
+                id: packing_date
+                size_hint_x: self.parent.width
+                hint_text: 'Geschlaucht am ?'
+        GridLayout:
+            cols: 1
+            rows: 3
+            size_hint_y: self.parent.height
+            Label:
+                text: 'Bemerkungen'
+                color: (0.2, 0.031, 0, 1)
+            TextInput:
+                id: note
+                size_hint_x: self.parent.width
+                hint_text: 'Anmerkung'
+            TextInput:
+                id: intendet_use
+                size_hint_x: self.parent.width
+                hint_text: 'Verwendung'        
+            
+        GridLayout:
+            cols: 1
+            rows: 2
+            size_hint_y: self.parent.height  
             Button:
                 text: 'Insert new item'
                 on_press: root.insert(new_item_input.text)
-            TextInput:
-                id: new_item_input
-                size_hint_x: None
-                hint_text: 'value'
-                height: self.minimum_height
-                padding: dp(10), dp(10), 0, 0
-        
-
+            Button: 
+                text: 'Clear'
+                
+            
 """
 
 Builder.load_string(kv)
