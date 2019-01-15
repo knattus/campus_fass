@@ -123,7 +123,17 @@ kv = """
                 color: (0.345, 0.169, 0.145, 1)
             Button: 
                 text: '(V) Verwendung'                
-                
+    
+    Widget:
+        id: separator
+        size_hint_y: None
+        height: 4
+        canvas:
+            Color:
+                rgb: 0.345, 0.169, 0.145
+            Rectangle:
+                pos: 0, separator.center_y
+                size: separator.width, 2            
     
     RecycleView:
         id: rv
@@ -138,6 +148,18 @@ kv = """
             height: self.minimum_height
             orientation: 'vertical'
             spacing: dp(2)
+            
+    Widget:
+        id: separator
+        size_hint_y: None
+        height: 4
+        canvas:
+            Color:
+                rgb: 0.345, 0.169, 0.145
+            Rectangle:
+                pos: 0, separator.center_y
+                size: separator.width, 2   
+                        
     GridLayout:
         cols: 4
         rows: 1
